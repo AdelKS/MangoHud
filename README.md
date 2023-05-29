@@ -430,21 +430,25 @@ Options starting with "gl_*" are for OpenGL.
 - `gl_bind_framebuffer = 0..N` : (Re)bind given framebuffer before MangoHud gets drawn. Helps with Crusader Kings III.
 - `gl_dont_flip = 1` : Don't swap origin if using GL_UPPER_LEFT. Helps with Ryujinx.
 
-## MangoHud FPS logging
+## FPS logging
 
 You must set a valid path for `output_folder` in your configuration to store logs in.
 
-When you toggle logging (using the keybind `Shift_L+F2`), a file is created with the game name plus a date & timestamp in your `output_folder`.
+When you toggle logging (default keybind is `Shift_L+F2`), a file is created with the game name plus a date & timestamp in your `output_folder`.
 
-Log files can be uploaded to [Flightlessmango.com](https://flightlessmango.com/games/user_benchmarks) to create graphs automatically.
+### Online viualization: FlightlessMango.com
+Log files can be (batch) uploaded to [FlightlessMango.com](https://flightlessmango.com/games/user_benchmarks), which will then take care of creating a frametime graph and a summary with 1% min / average framerate / 97th percentile in a table form and a horizontal bar chart form.
 
-You can share the created page with others, just link it.
+Notes:
+- Uploaded benchmarks are public: you can share them with anyone by simply giving them the link.
+- Benchmark filenames are used as legend in the produced tables and graphs, they can be renamed after the upload.
 
-### Multiple log files
-
-It's possible to upload multiple files when using [Flightlessmango.com](https://flightlessmango.com/games/user_benchmarks). You can rename them to your preferred names and upload them in a batch.
-These filenames will be used as the legend in the graph.
-
-### Log uploading walkthrough
 
 ![Gif illustrating the log uploading process](assets/log_upload_example.gif)
+
+### Local visualization: `mangoplot`
+Log files in a given folder (e.g. the one referred to by `output_folder`), can be read and plotted by the tool `mangoplot`. It should be installed along with MangoHud and offers a 1D heatmap of framerates of every benchmark within the folder.
+
+Example output:
+
+
